@@ -15,5 +15,5 @@ jobs:
     - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar -Dsonar.projectKey=devsecops-github-actions-all -Dsonar.organization=javaprojectreachability100 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
       env:
-        GIT_HUB_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
-        SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+        GIT_HUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONARCLOUD_TOKEN: ${{ secrets.SONAR_TOKEN }}
